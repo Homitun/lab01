@@ -7,7 +7,10 @@ package gui;
 
 import dto.FoodList;
 import dto.Menu;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.text.ParseException;
+import java.util.Scanner;
 
 /**
  *
@@ -29,8 +32,14 @@ public class Program {
             choice = menu.getChoice();
             switch(choice){
                 case 1:{
-                    Flist.addFood();
-                    break;
+                    String c ;
+                    do {
+                        Flist.addFood();
+                        System.out.println("do u want to continues? (y/n)");
+                        Scanner sc = new Scanner(System.in);
+                        c = sc.nextLine();
+                    }while(c.equals("y"));
+                    break;                                                                   
                 }
                 case 2:{
                     Flist.searchFoodByName();
@@ -45,12 +54,11 @@ public class Program {
                     break;
                 }
                 case 5:{
+                    Flist.writeFile();
                     System.out.println("See you, enjoy!");
                     break;
                 }
-            }
-            
-            
+            }                   
         }while (choice != 5);
     }
 }

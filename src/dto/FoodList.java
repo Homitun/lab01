@@ -1,5 +1,7 @@
 
 package dto;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.*;
 import util.MyToys;
 import java.text.SimpleDateFormat;
@@ -108,6 +110,19 @@ public class FoodList {
         food.showInfo();
         }
         
+    }
+    
+    public void writeFile(){
+        try{
+                    FileWriter fw = new FileWriter("data.txt");
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        for (Food food : foodList)                                       
+                        bw.write(food.toString());
+                        bw.close();
+                        fw.close();
+                    }catch (Exception e){
+                        
+                    }
     }
     
    public String getPlace(){
