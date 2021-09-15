@@ -23,7 +23,7 @@ public class FoodList {
         foodList.add(new Food(1, "Rau muong", "Vegetables", 500, "Vegetable cabinet", df.parse("30-09-2021")));
         foodList.add(new Food(2, "Thanh long", "Fruits", 2000, "Vegetable cabinet", df.parse("30-10-2021")));
         foodList.add(new Food(3, "Hat Dieu", " Grains, Beans and Nuts", 3000, "Vegetable cabinet", df.parse("15-10-2021")));
-        foodList.add(new Food(4, "thit bo", "Meat and Poultry", 5000, "Freezer", df.parse("05-12-2021")));
+        foodList.add(new Food(4, "Thit bo", "Meat and Poultry", 5000, "Freezer", df.parse("05-12-2021")));
         foodList.add(new Food(5, "Ca loc", "Fish and Seafood", 2500, "Freezer", df.parse("08-11-2021")));
         foodList.add(new Food(6, "Pho mai", "Dairy Foods", 100, "Freezer", df.parse("17-12-2021")));
     }
@@ -65,9 +65,10 @@ public class FoodList {
     
     public void searchFoodByName(){
         String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!");
-        for (Food food : foodList) {
-            if (food.getName().contains(search))
-                System.out.println(food);
+        for (Food food1 : foodList) {
+            if (food1.getName().contains(search))            
+                food1.showInfo();      
+            else System.out.println("NOT FOUND!");
         }       
     }
     
@@ -103,7 +104,10 @@ public class FoodList {
             return Long.valueOf(c1.getExpiredDate().getTime()).compareTo(c2.getExpiredDate().getTime());
         };
         Collections.sort(foodList, comparator);
-        foodList.forEach(System.out::println);
+        for (Food food : foodList) {
+        food.showInfo();
+        }
+        
     }
     
    public String getPlace(){
