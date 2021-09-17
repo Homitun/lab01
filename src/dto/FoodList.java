@@ -112,6 +112,17 @@ public class FoodList {
         
     }
     
+    public void printFoodListDescendingByWeight(){
+        Comparator<Food> comparator = (c2,c1)->{
+            return Integer.valueOf(c1.getWeight()).compareTo(c2.getWeight());
+        };
+        Collections.sort(foodList, comparator);
+        for (Food food : foodList) {
+        food.showInfo();
+        }
+        
+    }
+    
     public void writeFile(){
         try{
                     FileWriter fw = new FileWriter("data.txt");
