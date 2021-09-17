@@ -7,19 +7,13 @@ import util.MyToys;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
-import java.time.Clock;
-import java.util.Iterator;
 
 /**
  *
  * @author Walter White
  */
 public class FoodList {
-    private ArrayList<Food> foodList = new ArrayList<>();
-    long millis = System.currentTimeMillis() - 24 * 60 * 60 * 1000;
-    Date today = new java.util.Date(millis);
-      
-    // food dèault
+    private ArrayList<Food> foodList = new ArrayList<>();   
     public void addSample() throws ParseException{
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         foodList.add(new Food(1, "Rau muong", "Vegetables", 500, "Vegetable cabinet", df.parse("30-09-2021")));
@@ -41,6 +35,8 @@ public class FoodList {
     public void addFood() throws ParseException{
         int weight,id,pos;Date expireDate;
         String name= null ,type= null,place = null;
+        long millis = System.currentTimeMillis() - 24 * 60 * 60 * 1000;
+        Date today = new java.util.Date(millis);
         // check ID (cannot be modified, cannot be duplicated),
         do {
             id = MyToys.getAnInteger("Enter's Food ID: ", "ID must be an positive " +
@@ -68,8 +64,9 @@ public class FoodList {
     public void searchFoodByName(){
         String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!");
         for (Food food1 : foodList) {
-            if (food1.getName().contains(search))            
-                food1.showInfo();      
+            if (food1.getName().contains(search)){         
+                food1.showInfo();  
+            }    
             else System.out.println("NOT FOUND!");
         }       
     }
@@ -160,7 +157,7 @@ public class FoodList {
         Menu menuType = new Menu("Choose Type of Food");
          menuType.addNewOption("1. Vegetables");
          menuType.addNewOption("2. Fruits");
-         menuType.addNewOption("3. Grains, Beans and Nuts");
+         menuType.addNewOption("3. Grains,Beans and Nuts");
          menuType.addNewOption("4. Meat and Poultry");
          menuType.addNewOption("5. Fish and Seafood");
          menuType.addNewOption("6. Dairy Foods");
@@ -174,7 +171,7 @@ public class FoodList {
                     break;
                  case 2: type = "Fruits";
                     break;
-                 case 3: type = "Grains, Beans and Nuts";
+                 case 3: type = "Grains,Beans and Nuts";
                     break;
                  case 4: type = "Meat and Poultry";
                     break;

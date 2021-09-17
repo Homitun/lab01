@@ -34,6 +34,7 @@ public class Program {
                 case 1:{
                     String c ;
                     do {
+                        
                         Flist.addFood();
                         System.out.println("do u want to continues? (y/n)");
                         Scanner sc = new Scanner(System.in);
@@ -42,18 +43,22 @@ public class Program {
                     break;                                                                   
                 }
                 case 2:{
+                    System.out.println("=========Search food by name=======");
                     Flist.searchFoodByName();
                     break;
                 }
                 case 3:{
+                      System.out.println("=========Remove food by id=======");
                     Flist.removeFoodById();
                     break;
                 }
                 case 4:{
+                      System.out.println("=========Print food list descending by expDate=======");
                     Flist.printFoodListDescendingByExpDate();
                     break;
                 }
                 case 5:{
+                      System.out.println("=========sAVE FOOD LIST =======");
                     Flist.writeFile();
                     System.out.println("See you, enjoy!");
                     break;
