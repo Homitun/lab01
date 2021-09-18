@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
-import dto.FoodList;
+import dao.FoodList;
 import dto.Menu;
 import java.text.ParseException;
-import java.util.Scanner;
 
 /**
  *
@@ -45,8 +40,7 @@ public class Program {
                     boolean c = true;// c sand for continue
                     while (c){
                         System.out.println("=========Search food by name=======");
-                      Flist.searchFoodByName();
-                     
+                        Flist.searchFoodByName();
                         System.out.println("Do you want to continue Search ?");
                         c = Flist.menuYesNo();
                     }
@@ -63,14 +57,15 @@ public class Program {
                     break;
                 }
                 case 4:{
-                      System.out.println("============================Print food list descending by expDate======================");
-                      System.out.println("|   ID   |     NAME      |         TYPE            |WEIGHT|       PLACE    |EXPIREDATE|");
-                      System.out.println("---------------------------------------------------------------------------------------");
+                    
+                    System.out.println("============================Print food list descending by expDate======================");
+                    System.out.println("|   ID   |     NAME      |         TYPE            |WEIGHT|       PLACE    |EXPIREDATE|");
+                    System.out.println("---------------------------------------------------------------------------------------");
                     Flist.printFoodListDescendingByExpDate();
                     break;
                 }
                 case 5:{
-                      System.out.println("=========SAVE FOOD LIST =======");
+                    System.out.println("=========SAVE FOOD LIST =======");
                     Flist.writeFile();
                     System.out.println("See you, enjoy!");
                     break;

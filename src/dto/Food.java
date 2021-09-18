@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Food implements Comparable<Food> {
 
-    private String name, type,place;
+    private String name, type, place;
     private int weight, id;
     private Date expiredDate;
 
@@ -18,11 +18,11 @@ public class Food implements Comparable<Food> {
         name = "";
         type = "";
         weight = 0;
-        place ="";
+        place = "";
 
     }
 
-    public Food(int id, String name, String type, int weight,String place, Date expiredDate) {
+    public Food(int id, String name, String type, int weight, String place, Date expiredDate) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -38,7 +38,7 @@ public class Food implements Comparable<Food> {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +67,7 @@ public class Food implements Comparable<Food> {
         this.place = place;
     }
     
+
     public Date getExpiredDate() {
         return expiredDate;
     }
@@ -78,27 +79,27 @@ public class Food implements Comparable<Food> {
     @Override
     public String toString() {
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-       return String.format("|%-10s|%-10s|%-10d|%-15s|%-10s|\n", id,name,weight,place,df.format(expiredDate));
+        return String.format("|%-10s|%-10s|%-10d|%-15s|%-10s|\n", id, name, weight, place, df.format(expiredDate));
     }
-    
-    public void showInfo(){
-       SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+
+    public void showInfo() {
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         System.out.printf("|%8d|%-15s|%-25s|%-5d|%-17s|%-10s|\n",
-                            id,name,type,weight,place,df.format(expiredDate));
+                id, name, type, weight, place, df.format(expiredDate));
     }
-    
+
     @Override
     public int compareTo(Food that) {
-        if (this.id < that.getId()) 
+        if (this.id < that.getId()) {
             return -1;
-        else if (this.id > that.getId()) 
+        } else if (this.id > that.getId()) {
             return 1;
+        }
         return 0;
     }
 
     boolean contains(String search) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        throw new UnsupportedOperationException("Not supported yet.");
     }
-    
 
 }
