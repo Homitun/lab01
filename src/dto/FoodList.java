@@ -62,14 +62,21 @@ public class FoodList {
     }
     
     public void searchFoodByName(){
-        String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!");
+        String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!"); 
+        ArrayList<Food> listOfFound = new ArrayList<>();// lưu những food được tìm thấy
         for (Food food1 : foodList) {
-            if (food1.getName().contains(search)){         
-                food1.showInfo();  
-            }    
-            else System.out.println("NOT FOUND!");
+            if (food1.getName().contains(search))       
+               listOfFound.add(food1);
         }       
+        if (listOfFound.isEmpty()){
+            System.out.println("not found!");
+        } else{
+            for (Food found : listOfFound) {
+                found.showInfo();
+            }
+        }
     }
+    
     
     public void removeFoodById(){
         if(foodList.isEmpty())
@@ -182,4 +189,25 @@ public class FoodList {
              } return type;
          }while(choiceType != 6);
    }
+   public boolean menuYesNo() {
+		boolean flat = true;
+		while(flat) {
+			System.out.println("1.Yes");
+			System.out.println("2.No");
+			int choose;
+			do {
+				
+				choose = MyToys.getAnInteger("Enter your choose:", "Choice must be interger! ");
+			}while(choose < 0 || choose > 2);
+			switch (choose) {
+			case 1:{
+				return true;
+			}
+			case 2:{
+				return false;
+			}
+			}
+		}
+		return flat;
+	}
 }

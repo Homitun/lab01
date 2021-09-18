@@ -77,8 +77,8 @@ public class Food implements Comparable<Food> {
 
     @Override
     public String toString() {
-        return "Food{" + "id=" + id + ", name=" + name + ", type=" + type + ","
-                + " weight=" + weight + ", place=" + place + ", expiredDate=" + expiredDate + '}';
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+       return String.format("|%-10s|%-10s|%-10d|%-15s|%-10s|", id,name,weight,place,df.format(expiredDate));
     }
     
     public void showInfo(){
@@ -97,7 +97,7 @@ public class Food implements Comparable<Food> {
     }
 
     boolean contains(String search) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
     
 
