@@ -89,20 +89,13 @@ public class FoodList {
         int pos = searchFoodById(id);
             if (pos == -1){System.err.println("Food khong tồn tại!"); }
             else{
-                Menu x = new Menu("Are you sure you want to continue?");
-                x.addNewOption("1. yes");
-                x.addNewOption("2. no");
-                int c;
-                do{
-                    x.printMenu();c = x.getChoice();
-                    switch (c){
-                        case 1: foodList.remove(pos);
-                        System.out.println("Remove remove sucessfully!");
-                        break;
-                        case 2: System.out.println("ok, fine !");
-                            break;
-                    } 
-                }while(c != 2);
+                boolean c = false;// c sand for continue
+                System.out.println("Are you sure you want to delete?");
+                c = menuYesNo();
+                if (c == true){                     
+                        foodList.remove(pos);
+                    } return;
+                    
             }
        
         
