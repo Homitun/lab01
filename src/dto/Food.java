@@ -78,7 +78,7 @@ public class Food implements Comparable<Food> {
     @Override
     public String toString() {
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-       return String.format("|%-10s|%-10s|%-10d|%-15s|%-10s|", id,name,weight,place,df.format(expiredDate));
+       return String.format("|%-10s|%-10s|%-10d|%-15s|%-10s|\n", id,name,weight,place,df.format(expiredDate));
     }
     
     public void showInfo(){

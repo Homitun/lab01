@@ -1,1 +1,7 @@
-|1         |Rau muong |500       |Vegetable cabinet|30-09-2021||2         |Thanh long|2000      |Vegetable cabinet|30-10-2021||3         |Hat Dieu  |3000      |Vegetable cabinet|15-10-2021||4         |Thit bo   |5000      |Freezer        |05-12-2021||5         |Ca loc    |2500      |Freezer        |08-11-2021||6         |Pho mai   |100       |Freezer        |17-12-2021|
+|1         |Rau Muong |500       |Vegetable cabinet|30-09-2021|
+|2         |Thanh Long|2000      |Vegetable cabinet|30-10-2021|
+|3         |Hat Dieu  |3000      |Vegetable cabinet|15-10-2021|
+|4         |Thit Bo   |5000      |Freezer        |05-12-2021|
+|5         |Ca Loc    |2500      |Freezer        |08-11-2021|
+|6         |Pho Mai   |100       |Freezer        |17-12-2021|
+|12        |Ca Mu     |12        |Freezer        |22-12-2021|

@@ -16,12 +16,12 @@ public class FoodList {
     private ArrayList<Food> foodList = new ArrayList<>();   
     public void addSample() throws ParseException{
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        foodList.add(new Food(1, "Rau muong", "Vegetables", 500, "Vegetable cabinet", df.parse("30-09-2021")));
-        foodList.add(new Food(2, "Thanh long", "Fruits", 2000, "Vegetable cabinet", df.parse("30-10-2021")));
+        foodList.add(new Food(1, "Rau Muong", "Vegetables", 500, "Vegetable cabinet", df.parse("30-09-2021")));
+        foodList.add(new Food(2, "Thanh Long", "Fruits", 2000, "Vegetable cabinet", df.parse("30-10-2021")));
         foodList.add(new Food(3, "Hat Dieu", " Grains, Beans and Nuts", 3000, "Vegetable cabinet", df.parse("15-10-2021")));
-        foodList.add(new Food(4, "Thit bo", "Meat and Poultry", 5000, "Freezer", df.parse("05-12-2021")));
-        foodList.add(new Food(5, "Ca loc", "Fish and Seafood", 2500, "Freezer", df.parse("08-11-2021")));
-        foodList.add(new Food(6, "Pho mai", "Dairy Foods", 100, "Freezer", df.parse("17-12-2021")));
+        foodList.add(new Food(4, "Thit Bo", "Meat and Poultry", 5000, "Freezer", df.parse("05-12-2021")));
+        foodList.add(new Food(5, "Ca Loc", "Fish and Seafood", 2500, "Freezer", df.parse("08-11-2021")));
+        foodList.add(new Food(6, "Pho Mai", "Dairy Foods", 100, "Freezer", df.parse("17-12-2021")));
     }
     
     public int searchFoodById(int foodId){
@@ -62,7 +62,8 @@ public class FoodList {
     }
     
     public void searchFoodByName(){
-        String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!"); 
+//        String search = MyToys.getString("Input Search's keyword: ", "Search's keyword must be text!"); 
+        String search = MyToys.getAName("Input Search's keyword: ", "Search's keyword must be text!");
         ArrayList<Food> listOfFound = new ArrayList<>();// lưu những food được tìm thấy
         for (Food food1 : foodList) {
             if (food1.getName().contains(search))       
